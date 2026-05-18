@@ -99,6 +99,7 @@ class FamilyService
      */
     private function uploadFile(?UploadedFile $file, string $folder): ?string
     {
+        if (!$file) return null;
         $extension = $file->getClientOriginalExtension();
 
         $fileName = now()->format('YmdHis').'_'.Str::random(8); 
